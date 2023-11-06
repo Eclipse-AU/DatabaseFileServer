@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Website</title>
+    <link rel="manifest" href="manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-384x384.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
+    <link rel="icon" type="image/x-icon" href="images/icons/icon-512x512.png" />
+    <style> 
+        h1 {text-align: center;}
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <img src="images\logo.jpeg"/>
+        <h1>Website</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="forgottenPasswordPage.html">Reset Password</a></li>
+        </ul>
+      </nav>
+      <div class="container"></div>
+    </main>
+    <h1>Please Log in</h2>
+		<h1>Username <input class="h2-align" type="text" id="usernameInput"/></h2>
+		<h1>Password <input class="h2-align" type="password" id="passwordInput"/></h2>
+		<h1><input id="logInButtonHTML" class="center-block" type="button" value="Log In" onclick="logInButton();"></input></h1>
+    <script>
+        const sqlite3 = require('sqlite3').verbose();
+        
+        // the log in button that checks the login details and lets the user in
+        function logInButton () {
+            logInButtonHTML = document.getElementById("logInButton");
+            usernameInput = document.getElementById("usernameInput").value;
+            passwordInput = document.getElementById("passwordInput").value;
+            if (usernameInput == username.datasource && passwordInput == password.datasource) {
+                alert("log in successful")
+                console.log("log in successful, loading main.html...")
+                wait(1000);
+                change_page();
+            } else if (usernameInput != "charlie" && passwordInput != "test") {
+                alert("incorrect log in")
+            }
+        }
+
+        // changes page (code taken from https://stackoverflow.com/questions/24903148/navigate-between-html-files)
+        function change_page() {
+            // similar behavior as an HTTP redirect
+            alert("log in successful");
+            wait(1000);
+            window.location.replace("index.html");
+        };
+
+        // allows javascript to wait a set amount of time in ms before executing the next line of code (for debug at the moment)
+        function wait(ms){
+            var start = new Date().getTime();
+            var end = start;
+            while(end < start + ms) {
+            end = new Date().getTime();
+            }
+        }
+    </script>
+  </body>
+</html>

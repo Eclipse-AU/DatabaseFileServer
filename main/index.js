@@ -20,10 +20,10 @@ END
 */
 
 let myString = '[\n';
-db.all("SELECT * FROM sddstudents", function(err, rows) {
+db.all("SELECT * FROM loginData", function(err, rows) {
 let myCounter = 0;
 rows.forEach(function (row) {
-    myString = myString + '{\n"nesaID": ' + row.nesaID + ',\n"name": "' + row.name + '",\n"age": "' + row.age;
+    myString = myString + '{\n"userID": ' + row.userID + ',\n"username": "' + row.username + '",\n"password": "' + row.password + '",\n"email": "' + row.email;
     myCounter++
     if (myCounter == rows.length) {
         myString = myString + '"\n}\n';
@@ -35,7 +35,7 @@ rows.forEach(function (row) {
 // console.log(myString);
 //let myString = "123";
 var fs = require('fs');
-fs.writeFile("public/frontEndData.json", myString + "]", function(err) {
+fs.writeFile("public/validUserData.json", myString + "]", function(err) {
     if (err) {
         console.log(err);
     }

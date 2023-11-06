@@ -1,5 +1,5 @@
 let result = ""; 
-fetch('./manifest.json') 
+fetch('./validUserData.json') 
   .then(function (response) { 
     return response.json(); 
   }) 

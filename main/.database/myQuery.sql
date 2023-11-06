@@ -1,9 +1,9 @@
--- CREATE TABLE sddstudents (nesaID INTEGER NOT NULL PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL);
+-- CREATE TABLE loginData (userID INTEGER NOT NULL PRIMARY KEY, username TEXT NOT NULL, password TEXT NOT NULL, email TEXT NOT NULL);
 
--- INSERT INTO sddstudents (nesaID, name, age) VALUES (1234,"David Smith","17");
+-- INSERT INTO loginData (userID, username, password, email) VALUES (3,"user","pass","user@email.com");
 
 -- INSERT INTO sddstudents (nesaID, name, age) VALUES (45678,"Marty Davis","17");
 
-SELECT * FROM sddstudents;
+SELECT * FROM loginData;
 
-SELECT * FROM sddstudents WHERE name LIKE 'David Smith';
+-- SELECT * FROM loginData WHERE username LIKE 'admin';
